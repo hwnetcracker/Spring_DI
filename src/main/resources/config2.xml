@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="car1" class="com.netcracker.spring_di.model.Car" scope="prototype">
+        <property name="year" value="1961"/>
+        <property name="brand" value="Volga 21"/>
+    </bean>
+    <bean id="car2" class="com.netcracker.spring_di.model.Car" scope="prototype">
+        <property name="year" value="1962"/>
+        <property name="brand" value="Volga 24"/>
+    </bean>
+    <bean id="car3" class="com.netcracker.spring_di.model.Car" scope="prototype">
+        <property name="year" value="1963"/>
+        <property name="brand" value="Volga 27"/>
+    </bean>
+    <bean id="SIGarage" class="com.netcracker.spring_di.model.Garage" scope="prototype">
+        <property name="carList">
+            <util:list id="list1" value-type="java.lang.Integer">
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </util:list>
+        </property>
+        <property name="carSet">
+            <set>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+                <ref bean="car3"/>
+            </set>
+        </property>
+        <property name="carMap">
+            <map>
+                <entry value="#{car1}" key="1"/>
+                <entry value="#{car2}" key="2"/>
+                <entry value="#{car3}" key="3"/>
+            </map>
+        </property>
+    </bean>
+</beans>

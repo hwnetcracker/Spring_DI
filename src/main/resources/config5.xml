@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="carNo" class="com.netcracker.spring_di.model.Car" >
+        <property name="year" value="2019"/>
+        <property name="brand" value="2101"/>
+    </bean>
+    <bean id="carByName" class="com.netcracker.spring_di.model.Car" autowire="byName">
+        <property name="year" value="2018"/>
+        <property name="brand" value="2102"/>
+    </bean>
+    <bean id="carByType" class="com.netcracker.spring_di.model.Car" autowire="byType">
+        <property name="year" value="2017"/>
+        <property name="brand" value="2103"/>
+    </bean>
+    <bean id="carConstructor" class="com.netcracker.spring_di.model.Car" autowire="constructor">
+        <property name="year" value="2016"/>
+        <property name="brand" value="2102"/>
+    </bean>
+</beans>

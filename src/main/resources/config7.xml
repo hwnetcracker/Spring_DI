@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Car" class="com.netcracker.spring_di.model.Car" scope="prototype">
+        <property name="year" value="2019"/>
+        <property name="brand" value="BMW X3"/>
+    </bean>
+    <bean id="Lookup" class="com.netcracker.spring_di.model.Garage">
+        <lookup-method name="virtualConctructor" bean="Car"/>
+    </bean>
+</beans>
